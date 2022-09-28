@@ -1,0 +1,88 @@
+% !TeX root = ../main.tex
+
+\chapter{Bragg grating-assisted WDM filter} \label{chap:4}
+    \lipsum 
+    \cite{cwdmf-mmi-3, cwdmf-mmi-1, cwdmf-wbg-1, cwdmf-awgmzi-1, cwdmf-awgmzi-2, cwdmf-awg-5, cwdmf-mzi-9, cwdmf-awg-4, cwdmf-awg-3, cwdmf-mmi-2, cwdmf-mzi-7, cwdmf-wbg-6-1, cwdmf-mzi-3, cwdmf-all, cwdmf-wbg-2, cwdmf-wbg-3, cwdmf-mzi-5, cwdmf-mzi-8, cwdmf-awg-1, cwdmf-wbg-6, cwdmf-eg-1, cwdmf-eg-2, cwdmf-mzi-2, cwdmf-mzi-6, cwdmf-mzi-1, cwdmf-mzi-4, cwdmf-wbg-4, cwdmf-awg-2, cwdmf-wbg-5}. 
+    To broaden the available channel bandwidth (ABW) under the desired low crosstalk (XT) 
+    to further improve the communication system, flattened filtering responses are required. 
+    
+    In this chapter, \lipsum
+
+\section{Device structure and optimization} \label{sec:4.1}
+    \lipsum
+    
+    \lipsum
+    
+    \lipsum
+    
+    \lipsum
+    \ur{Table~\ref{tab:three} shows} performance comparison, 
+    \begin{table}[!tb]
+		\caption{\label{tab:three}
+		Performance comparison of CWDM filters in the literature.}
+		\centering
+		% \begin{ruledtabular}
+		% \begin{tabular}{|M{0.45in}|M{0.27in}|M{0.25in}|M{0.2in}|M{0.3in}|M{0.4in}|M{0.4in}|}	\hline % well fit for IEEE
+		\begin{tabular}{|M{.7in}|M{.5in}|M{.5in}|M{.3in}|M{.45in}|M{.6in}|M{.6in}|}	\hline % well fit for IEEE
+			\rowcolor{lightgray}\textbf{Structure} & 
+            \textbf{EL (dB)} & 
+            \textbf{XT (dB)} & 
+            \textbf{Mat./ Band} & 
+            \textbf{BW\SPSB{a}{1-dB} (nm)} & 
+            \ur{\textbf{ABW\SPSB{b}{20-dB} (nm)}} & 
+            \ur{\textbf{ABW\SPSB{c}{28-dB} (nm)}} \\ \hline
+            
+            AWG~\cite{cwdmf-awg-1} (Fig.~6(a)) & 
+                    5--6 & \symbol{"2212}27 & InP/ O & 3 & \ur{$<$ 3} & \ur{--} \\ \hline
+            AWG~\cite{cwdmf-awg-2} (Fig.~14) & 
+                    $\sim$3 & \symbol{"2212}25 & Si/ O & $\sim$11 & \ur{$\sim$12.8} & \ur{--} \\ \hline
+            EG\ur{\SP{d}}~\cite{awgeg} (Fig.~5(d)) & 
+                    $\sim$3 & \symbol{"2212}2\ur{2} & Si/ C & $\sim$5.7 & \ur{$\sim$7.5} & \ur{--} \\ \hline
+            % EG~\cite{cwdmf-eg-1, cwdmf-eg-2} (Fig.~3(c),~3)  & 
+            EG~\cite{cwdmf-eg-1} (Fig.~3(c))  & 
+                    2--3 & \symbol{"2212}30 & SiN/ O & $\sim$6.7 & \ur{5.7} & \ur{$<$ 3} \\ \hline
+            MMI\ur{\SP{e}}~\cite{cwdmf-mmi-2} (Fig.~3(d)) & 
+                    2--3 & \symbol{"2212}13 & Si/ C & 8.5 & \ur{--} & \ur{--} \\ \hline
+            MMI~\cite{cwdmf-mmi-1} (Fig.~6(b)) & 
+                    $<$ 1 & \symbol{"2212}18 & LN/ O & 7.5 & \ur{--} & \ur{--} \\ \hline
+            MZI~\cite{cwdmf-mzi-7} (FIg.~6(b)) & 
+                    $\sim$0.5 & \symbol{"2212}16 & Si/ C & $\sim$14 & \ur{--} & \ur{--} \\ \hline
+            MZI~\cite{cwdmf-mzi-1} (Fig.~5(d)) & 
+                    $<$ 1 & \symbol{"2212}23 & Si/ O & 18 & \ur{$\sim$3.7} & \ur{--} \\ \hline
+            % MZI (Fig.~3(\ur{b}))~\cite{cwdmf-mzi-9} & 
+                    % 1.77 & \symbol{"2212}\ur{20} & SiN/ O & 2.87 & \ur{77} & \ur{--} \\ \hline
+            MZI~\cite{cwdmf-mzi-9} (Fig.~3(b)) & 
+                    1.78 & \symbol{"2212}15 & SiN/ O & 11.86 & \ur{--} & \ur{--} \\ \hline
+            WBG\ur{\SP{f}}~\cite{cwdmf-wbg-6} (Fig.~6(b)) & 
+                    $\sim$1 & \symbol{"2212}12 & Si/ C & 12 & \ur{--} & \ur{--} \\ \hline
+            WBG~\cite{cwdmf-wbg-1} (Fig.~7) & 
+                    $<$ 1 & \symbol{"2212}\ur{13} & Si/ C & 7 & \ur{--} & \ur{--} \\ \hline
+            WBG~\cite{cwdmf-wbg-2} (Fig.~5(\ur{c})) & 
+                    $\sim$1 & \symbol{"2212}20 & Si/ O & 15 & \ur{$\sim$12} & \ur{--} \\ \hline
+            WBG~\cite{cwdmf-wbg-3} (Fig.~5(b)) & 
+                    $<$ 1.1 & \symbol{"2212}18 & LN/ C & 10 & \ur{--} & \ur{--} \\ \hline
+            \ur{Proposed Structure} & 
+                    $<$ \ur{1} & \ur{\textbf{\symbol{"2212}28}} & SiN/ O & \ur{\textbf{13.45}} & \ur{\textbf{$\sim$15.7}} & \ur{\textbf{14.35}} \\ \hline
+		\end{tabular}
+		% \end{ruledtabular}
+        \begin{flushleft}
+			\SP{a} 1-dB bandwidth measured from \ur{the} transmission peak.\\	
+			\ur{\SP{b} Available bandwidth for channel XT below \symbol{"2212}20~dB, \textit{i.e.}, ABW\SB{20-dB}.}\\	
+			\ur{\SP{c}} Available bandwidth for channel XT below \symbol{"2212}2\ur{8}~dB, \textit{i.e.}, ABW\SB{2\ur{8}-dB}.\\	
+			\SP{d} Echelle grating; \SP{e} Multi-mode interferometer; \SP{f} Waveguide Bragg grating. \\
+		\end{flushleft}
+	\end{table}
+    \ur{indicating} \ur{the} ultra-low channel XT of \symbol{"2212}28~dB \ur{with its ultra-broad available bandwidth $\sim$14.35~nm}, 
+    \ur{outperforming all other CWDM filters in the literature.} 
+    % at the cost of \ur{wider} BW\SB{25-dB} (BW\SB{28-dB}).
+    %%
+
+\section{Analysis of fabrication tolerance} \label{sec:4.2}
+    \lipsum
+    
+    \lipsum
+
+\section{Summary} \label{sec:4.3}
+    \lipsum 
+    showing the \ur{great} potential and \ur{high} \ur{attractiveness} of the proposed device \ur{for use in} the 
+    \ur{O-band CWDM telecommunication systems}.

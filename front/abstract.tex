@@ -1,0 +1,98 @@
+% !TeX root = ../main.tex
+
+\begin{abstract}
+    分波 (解) 多工元件由於大數據、雲端運算、及物聯網的蓬勃發展而被廣泛地使用在商業與學術用途。
+    由於製程誤差與環境溫度的影響，分波 (解) 多工器與光源的雷射波長會偏移而與預期的通道波長不同。
+    為了解決這個現象，
+    本篇論文提出兩個研究包含電控熱調式陣列波導光柵以及布拉格光柵反向耦合器以解決之。
+    
+    本論文提出一個利用 S 型陣列波導光柵中兩個三角區域補償相位的特點來設計光譜雙向可調的分波多工濾波器。
+    在額外增加電控熱調機制於此兩區域後，
+    元件可以在其中一個區域外加電壓之後得到光譜紅 (藍) 移以匹配所需的分波系統通道波長。
+    為了降低所需電壓及模擬維度，電控熱調的電極及加熱區走線我們使用串聯至特定單位數目後再並聯的方式達成。
+    此外，鑒於大折射率對比所帶來的小元件佔地面積、導波層較大的熱光係數、以及鎢材的高熱導率，
+    我們可以預見位移矽基元件之濾波響應所需的熱能相比其他平台小。
+    從實際製作出的元件我們量測得到 $\pm$30.5 奈米/瓦 的線性且雙向可調的調製效率，即使只使用正的熱光係數材質，
+    若外加電壓範圍 0 至 2.5 伏特其可調製範圍約 8 奈米。
+    相比其他目前已紀載之熱調式陣列波導光柵，
+    此研究的雙向可調特性、高調製效率、超低需求電壓、以及大的可調範圍完勝它們，
+    顯示此元件對於分波 (解) 多工系統的潛力。
+    
+    另一方面，本論文亦提出一個利用布拉格光柵反向耦合器，
+    以達到平頭式(平頂)、超低串擾的濾波響應符合大通道間距分波系統所需。
+    為了放寬布拉格週期所需的最小線寬，
+    我們使用有較小折射率之氮化矽而非矽作為導波層來實現此元件。
+    此外，為了將通道串擾降得更低以及更有效率地設計出期望的共振波長，
+    我們利用基於微擾式介電常數的耦合模態理論得出恰當的多模波導布拉格光柵兩側之寬度瓦楞。
+    模擬結果顯示元件達到超低通道串擾 \symbol{"2212}25.5~分貝、超低額外損耗小於 0.3~分貝、
+    超大的製程容忍度 $\pm$18~奈米、以及超寬 \symbol{"2212}25~分貝之串擾可用帶寬約 13.5~奈米。
+    透過S參數觀念將四個波導布拉格光柵與刪除信號元件串接，
+    我們得到有著
+    (甲) 超低額外損耗 $<$ 0.6~分貝、
+    (乙) 高通道均勻度 $>$ \symbol{"2212}0.45~分貝、
+    (丙) 寬的 1~分貝帶寬約 13.45~奈米、以及
+    (丁) 超低的 $<$ \symbol{"2212}28~分貝之串擾可用帶寬約 14.35~奈米的
+    平頂濾波響應效能。
+    製程誤差分析顯示在極端的 $\pm$18~奈米之製程誤差下，
+    通道串擾仍然維持在 $<$ \symbol{"2212}25~分貝而不影響到額外損耗或帶寬。
+    相較其他目前已知的大通道間距分波 (解) 多工系統濾波器，
+    本研究提出的元件擁有超低損耗的平頂濾波響應、接近陣列波導光柵的超低通道串擾、
+    以及最寬的 \symbol{"2212}28~分貝之串擾可用帶寬，
+    顯示此元件對於大通道間距分波多工電信傳輸系統的強大潛力與魅力。
+\end{abstract}
+
+\begin{abstract*}
+    Thanks to the well development of big data, cloud computing, and the Internet of Things, 
+    wavelength division (de)multiplexing (WDM) systems have been widely utilized in commercial and academic use. 
+    Due to fabrication errors and increased environmental temperature, 
+    the spectral peak wavelengths of WDM filters and the lasing wavelengths of optical sources would 
+    deviate from the desired channels wavelengths. 
+    To address this, 
+    two studies are proposed and presented in this dissertation, 
+    including thermally tunable arrayed waveguide grating (AWG) 
+    and Bragg grating-assisted contra-directional coupler (BGACDC).
+    
+    In Chapter~\ref{chap:3}, 
+    two triangular region with complementary phase distributions in an S-shaped AWG are leveraged and 
+    chosen as the thermal-tuning regions controlled by electrical voltages. 
+    Red (Blue) shifted spectra can be achieved by applying voltages on one of two regions, 
+    to meet the desired channel wavelengths. 
+    In order to reduce the required ele\ur{c}trical voltages and the \ur{dimension degree used} in simulation model, 
+    a parallel configuration and a concept of heater unit are respectively employed for the circuit. 
+    In addition, three aspects including 
+    (i) larger thermo-optic coefficient, 
+    (ii) smaller device footprint brought by high-index contrast, and 
+    (iii) higher thermal conductivity of the tungsten allow for 
+    the lower requirement of the thermal power to shift the filtering responses, compared to other platform. 
+    From the simulation results, 
+    a linear and bi-directional tuning efficiency approximate\ur{ly} $\pm$30.5~nm/W, 
+    in spite of using only materials with positive thermo-optic coefficients, 
+    is achieved at a tuning range of 8~nm in the electrical voltage range of 0--2.5~V. 
+    Given the bi-directional tunable feasibility, the ultra-high tuning efficiency, 
+    the ultra-low required voltages, and the wide tuning range, 
+    the device demonstrated in this study outperforms other thermally tunable AWGs proposed in the known literature, 
+    showing its great potential for the WDM systems. 
+    
+    On ther other hand, a BGACDC is proposed 
+    to achieve flap-top filtering responses with ultra-low crosstalk (XT) for coarse WDM (CWDM) systems. 
+    To relax the critical dimension required for the Bragg period in O-band, 
+    silicon nitride with lower index instead of silicon is used to realize the device. 
+    In order to further reduce the channel XT and evaluate the desired resonant wavelength more efficiently, 
+    an appropriate width corrugations for both side walls of the multi-mode waveguide Bragg grating are 
+    utilized based on the perturbed-permittivity coupled mode theory. 
+    The simulation results show that ultra-low channel XTs $<$ \symbol{"2212}25.5~dB, 
+    ultra-low excess losses (ELs) $<$ 0.3~dB, an ultra-high fabrication tolerance of $\pm$18~nm, 
+    and ultra-broad available bandwidths of 13.5~nm for channel XT below \symbol{"2212}25~dB (ABW\SB{25-dB})
+    are achieved. 
+    To evaluate performances of the overall filter formed by four cascaded BGACDCs and identical broadband signal dropping devices, 
+    the overall CWDM filter offers flat-top responses with ultra-low ELs $<$ 0.6~dB, 
+    a high channel uniformity $>$ \symbol{"2212}0.45~dB, broad 1-dB bandwidths $\sim$13.45~nm, 
+    ultra-low XTs $<$ \symbol{"2212}28~dB, and ultra-broad ABWs\SB{28-dB} $\sim$14.35~nm. 
+    Analysis of the tolerance showed that XTs of the overall filter remained $<$ \symbol{"2212}25~dB 
+    even for extreme cases with $\pm$18-nm over-etching errors without compromising the ELs or BWs.
+    Compared to other CWDMs proposed in the literature to date, 
+    the device proposed in this study has the ultra-low EL with flat-top responses, 
+    ultra-low XT which is competitive with the AWGs, 
+    and the broadest ABW\SB{28-dB}, 
+    illustrating its \ur{great} potential and \ur{high} attractiveness for use in the CWDM telecommunication systems. 
+\end{abstract*}

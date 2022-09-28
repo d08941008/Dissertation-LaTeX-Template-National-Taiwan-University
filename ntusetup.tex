@@ -1,0 +1,85 @@
+% !TeX root = ./main.tex
+
+% --------------------------------------------------
+% 資訊設定（Information Configs）
+% --------------------------------------------------
+
+\ntusetup{
+  university*   = {National Taiwan University},
+  university    = {國立臺灣大學},
+  college       = {電機資訊學院},
+  college*      = {College of Electrical Engineering and Computer Science},
+  institute     = {光電工程學研究所},
+  institute*    = {Graduate Institute of Photonics and Optoelectronics},
+  title         = {基於矽光平台上之 O-band 1$\times$4 分波(解)多工濾波器},
+  title*        = {O-band 1$\times$4 wavelength division (de)multiplexing filters on Silicon Photonics}, 
+  author        = {鍾國方},
+  author*       = {Kuo-Fang Chung},
+  ID            = {D08941008},
+  advisor       = {黃定洧},
+  advisor*      = {Ding-Wei Huang},
+  date          = {2022-09-26},         % 若註解掉，則預設為當天
+  oral-date     = {2022-09-26},         % 若註解掉，則預設為當天
+  DOI           = {10.5566/NTU2022XXXXX},
+  keywords      = {矽光子, 陣列波導光柵, 波導布拉格光柵, 多模波導, 分波(解)多工器},
+  keywords*     = {Silicon Photonics, waveguide Bragg grating, multi-mode waveguide, wavelength division (de)multiplexer},
+}
+
+% --------------------------------------------------
+% 加載套件（Include Packages）
+% --------------------------------------------------
+
+% \usepackage[sort&compress]{natbib}      % 參考文獻
+\usepackage[noadjust]{cite}     % replace with natbib
+
+\usepackage{amsmath, amsthm, amssymb}   % 數學環境
+\usepackage{ulem, CJKulem}              % 下劃線、雙下劃線與波浪紋效果
+\usepackage{booktabs}                   % 改善表格設置
+\usepackage{multirow}                   % 合併儲存格
+\usepackage{diagbox}                    % 插入表格反斜線
+\usepackage{array}                      % 調整表格高度
+\usepackage{longtable}                  % 支援跨頁長表格
+\usepackage{paralist}                   % 列表環境
+\usepackage{lipsum}                     % 英文亂字
+\usepackage{zhlipsum}                   % 中文亂字
+\usepackage{xstring}        % for IEEEtranDOI.bst
+%............... for narrow-width Delta symbol in equation and Times new roman -like font...............%
+\usepackage{mathtools}
+% \usepackage{libertine}
+\usepackage[slantedGreek]{newtxmath}        % for \upDelta symbol
+%....................................................................................................................................................
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash\small}p{#1}}
+% \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash\small}m{#1}}
+%............... makecell for change line within the cell .......................
+\usepackage{makecell}
+%......................................................................................................
+
+%............... for caption fontsize ................................
+%\usepackage[format=hang,font={small,bf}]{caption}
+%\usepackage[format=hang,font=small,labelfont=bf]{caption}
+% \usepackage[format=hang,font=small,labelfont={large,bf}]{caption}
+% \usepackage[format=plain,font=small,labelfont={large,bf}]{caption}
+\usepackage[format=plain,font=small,labelfont={normalsize,bf}]{caption}
+%...............................................................................
+
+% \usepackage[utf8x]{inputenc}        % for unicode
+
+\newcounter{subeq}
+\newcommand{\stags}{
+\addtocounter{equation}{+1}
+\setcounter{subeq}{0}}
+\newcommand{\stag}{%
+    \addtocounter{subeq}{1}%
+    \theequation\alph{subeq}%
+                    }
+
+
+% --------------------------------------------------
+% 套件設定（Packages Settings）
+% --------------------------------------------------
+% \colorlet{ured}{red!60!gray}
+% \colorlet{ured}{red!60!blue}
+% \def\ur#1{{\color{ured}#1}}
+\def\ur#1{#1}
