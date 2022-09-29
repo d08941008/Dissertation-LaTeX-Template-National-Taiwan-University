@@ -22,10 +22,15 @@
 
 % 封面與口試審定
 % Cover and Verification Letter
-\makecover                          % 論文封面（Cover）
+%............................. Dummy page for "Turnitin" and watermark bug............................
+\makecover                          % 論文封面（Cover）Dummy page for Turnitin
 \makecover                          % 論文封面（Cover）Dummy page, used as the first watermark blank page. 
-\makecover                          % 論文封面（Cover）Cover with doi and watermark
-\makeverification                   % 口試委員審定書（Verification Letter）
+%.....................................................................................................
+
+\makecover                          % 論文封面（Cover）Real cover with doi and watermark
+% \makeverification                   % 口試委員審定書（Verification Letter）
+\includeverification            % 匯入委員審定書 (PDF)
+
 % 致謝與論文摘要
 % Acknowledgement and Abstract
 \input{front/acknowledgement}       % 致謝（Acknowledgement）
