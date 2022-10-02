@@ -11,7 +11,7 @@
   fontset   = template,             % fontset = default | template | system | overleaf
   watermark = true,                 % watermark = true | false
   doi       = true,                 % doi = true | false
-  draftset = true,          % true for draft statement at cover, false for the final version
+  draftset = false,          % true for draft statement at cover, false for the final version
 ]{ntuthesis}
 
 \input{ntusetup}
@@ -23,15 +23,14 @@
 % 封面與口試審定
 % Cover and Verification Letter
 %............................. Dummy page for "Turnitin" and watermark bug............................
-\makecover                          % 論文封面（Cover）Dummy page for Turnitin
-\makecover                          % 論文封面（Cover）Dummy page, used as the first watermark blank page. 
+% \makecover                          % 論文封面（Cover）Dummy page for Turnitin
+% \makecover                          % 論文封面（Cover）Dummy page, used as the first watermark blank page. 
 %.....................................................................................................
 
 \makecover                          % 論文封面（Cover）Real cover with doi and watermark
 % \makeverification                   % 口試委員審定書（Verification Letter）
 \includeverification            % 匯入委員審定書 (PDF)
 
-% 致謝與論文摘要
 % Acknowledgement and Abstract
 \input{front/acknowledgement}       % 致謝（Acknowledgement）
 \input{front/abstract}              % 摘要（Abstract）
@@ -62,7 +61,7 @@
 % 附錄
 % Appendices
 \input{back/appendix01}
-\input{back/appendix02}
-\input{back/appendix03}
+% \input{back/appendix02}
+% \input{back/appendix03}
 
 \end{document}

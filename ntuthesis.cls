@@ -730,9 +730,9 @@
 %........... debug watermark at the first page ..........%
 \newcounter{mypage}
 \setcounter{mypage}{1}
-\newcommand{\makewatermark}[2]{
+\newcommand{\makewatermark}[3]{
     \AddToHook{shipout/background}{
-        \ifthenelse{\value{mypage}>1}{
+        \ifthenelse{\value{mypage}>#3}{
             \put(0,0){
                 \parbox[b][\paperheight]{\paperwidth}{
                 \vfill
@@ -1017,7 +1017,8 @@
 % 根據設定決定是否添加浮水印
 % Insert watermark according to the config.
 %
-\ifthenelse{\equal{\ntu@watermark}{true}}{\makewatermark{0.25}{figures/seal.pdf}}{}
+% \ifthenelse{\equal{\ntu@watermark}{true}}{\makewatermark{0.25}{figures/seal.pdf}}{}
+\ifthenelse{\equal{\ntu@watermark}{true}}{\makewatermark{0.25}{figures/seal.pdf}{0}}{}
 
 % 根據設定決定是否添加數位標識
 % Insert DOI according to the config.
