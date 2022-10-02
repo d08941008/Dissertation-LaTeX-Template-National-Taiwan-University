@@ -8,9 +8,14 @@
 % Document      : https://hsins.github.io/NTU-Thesis/
 % Last Updated  : 2020.05.01
 %
+%......................................................................................................................................
 % Version   :2.0
 % Editor:   RyanChung <d08941008@ntu.edu.tw>
-% Date: 2022.08.19
+% Last Updated : 2022.10.03
+% Document: https://github.com/d08941008/Dissertation-LaTeX-Template-National-Taiwan-University.git
+%
+%..............................................
+% Added features:
 % Add IEEE bib command for "\bstctlcite{IEEEexample:BSTcontrol}" used in main.tex
 % Add folder "bibfolder" for IEEE bib style (features: doi link, url link, urldate)
 % Change the link color
@@ -26,7 +31,7 @@
 % Add draft option at documentclass
 % Include verification letter feature (.pdf)
 % Debug the first blank page due to watermark, for Turnitin.
-
+%...........................................
 
 % --------------------------------------------------
 % 01 類別宣告（Class Declaration）
