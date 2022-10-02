@@ -24,6 +24,8 @@
 % Add subcounter to present, say Eq. (1a) and Eq. (1b)
 % Add table option into xcolor for highlight rowcolor in comparison table of chapter 3
 % Add draft option at documentclass
+% Include verification letter feature (.pdf)
+% Debug the first blank page due to watermark, for Turnitin.
 
 
 % --------------------------------------------------
@@ -82,7 +84,8 @@
 \newcommand{\ntu@listoftables@en}{List of Tables}
 \newcommand{\ntu@denotation@en}{Denotation}
 \newcommand{\ntu@bibliography@en}{References}
-\newcommand{\ntu@acknowledgement@en}{Acknowledgements}
+% \newcommand{\ntu@acknowledgement@en}{Acknowledgements}
+\newcommand{\ntu@acknowledgement@en}{致謝}
 \newcommand{\ntu@abstract@en}{Abstract}
 \newcommand{\ntu@keyword@en}{Keywords:~}
 \newcommand{\ntu@kwsymbol@en}{,~}
@@ -94,6 +97,7 @@
 % 變數: 版面設定
 % Variables: Layouts
 \newcommand{\ntu@geometry@main}{top=3cm, bottom=2cm, left=3cm, right=3cm}
+\newcommand{\ntu@geometry@includeveri}{top=3cm, bottom=2cm, left=3cm, right=3cm}
 \newcommand{\ntu@geometry@cover}{top=3cm, bottom=3cm, left=3cm, right=3cm}
 
 \newcommand{\ntu@tocvspace}{1em}
@@ -710,26 +714,51 @@
 %   #1 Opacity                  設置透明度
 %   #2 Logo Path                校徽路徑
 %
+% \newcommand{\makewatermark}[2]{
+  % \AddToShipoutPicture{
+    % \put(0,0){
+      % \parbox[b][\paperheight]{\paperwidth}{
+        % \vfill
+        % \centering
+        % \begin{tikzpicture}[remember picture, overlay]
+          % \coordinate (WM) at ([xshift=-4.325cm, yshift=-4.325cm] current page.north east);
+          % \node [scale=1] at (WM) {\includegraphics[width=3.65cm, height=3.65cm]{#2}};
+          % \filldraw [fill=white, opacity=1-\the\numexpr#1] (current page.north east) rectangle (current page.south west);
+        % \end{tikzpicture}
+      % \vfill
+% }}}}
+%........... debug watermark at the first page ..........%
+\newcounter{mypage}
+\setcounter{mypage}{1}
 \newcommand{\makewatermark}[2]{
-  \AddToShipoutPicture{
-    \put(0,0){
-      \parbox[b][\paperheight]{\paperwidth}{
-        \vfill
-        \centering
-        \begin{tikzpicture}[remember picture, overlay]
-          \coordinate (WM) at ([xshift=-4.325cm, yshift=-4.325cm] current page.north east);
-          \node [scale=1] at (WM) {\includegraphics[width=3.65cm, height=3.65cm]{#2}};
-          \filldraw [fill=white, opacity=1-\the\numexpr#1] (current page.north east) rectangle (current page.south west);
-        \end{tikzpicture}
-      \vfill
-}}}}
+    \AddToHook{shipout/background}{
+        \ifthenelse{\value{mypage}>1}{
+            \put(0,0){
+                \parbox[b][\paperheight]{\paperwidth}{
+                \vfill
+                \centering
+                \begin{tikzpicture}[remember picture, overlay]
+                \coordinate (WM) at ([xshift=-4.325cm, yshift=-4.325cm] current page.north east);
+                \node [scale=1] at (WM) {\includegraphics[width=3.65cm, height=3.65cm]{#2}};
+                \filldraw [fill=white, opacity=1-\the\numexpr#1] (current page.north east) rectangle (current page.south west);
+                \end{tikzpicture}
+                \vfill
+                }
+            }
+        }
+    }
+    \AddToHook{shipout/after}{
+        \stepcounter{mypage}
+    }
+}
 
 % [插入數位識別]
 % - \InsertDOI{#1}              生成數位識別碼
 %   #1 DOI Code                 數位識別碼
 %
 \newcommand{\insertdoi}[1]{
-  \AddToShipoutPicture{
+  % \AddToShipoutPicture{       %   original version, opacity will be applied
+  \AddToHook{shipout/background}{     % modified version
     \AtPageUpperLeft{
       \fboxrule=0pt\fboxsep=0pt\framebox[\paperwidth][r]{
       \raisebox{-\paperheight}{
@@ -783,6 +812,32 @@
 
   % 清除頁碼
   \clearpage
+  \restoregeometry
+}
+
+% [匯入口委審定書PDF]
+% Import the verification letter page (*.pdf)
+%
+\newcommand{\includeverification}{
+  \clearpage
+  \phantomsection
+  \ntu@setgeometry{\ntu@geometry@includeveri}
+  \pagenumbering{roman}
+  \addcontentsline{toc}{chapter}{\ntu@verificationletter}
+  \begin{singlespace}
+      \begin{center}
+          \fontsize{24}{36}\selectfont
+          {\ntu@university}{\ntu@degree}學位{\ntu@type}\par
+          \fontsize{26}{39}\selectfont
+          口試委員會審定書\par
+      \end{center}
+  \end{singlespace}
+  \begin{figure}[!h]
+        \includegraphics{Verification_Letter.pdf}
+        \centering
+        % \caption[]{}
+    \end{figure}
+  % 恢復預設板型
   \restoregeometry
 }
 
