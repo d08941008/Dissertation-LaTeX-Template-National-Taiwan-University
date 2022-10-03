@@ -9,8 +9,8 @@
   degree    = doctor,               % degree = master | doctor
   language  = english,              % language = chinese | english
   fontset   = template,             % fontset = default | template | system | overleaf
-  watermark = true,                 % watermark = true | false
-  doi       = true,                 % doi = true | false
+  watermark = false,                 % watermark = true | false (using true leads to a bug of the first page with watermark applied)
+  doi       = false,                 % doi = true | false
   draftset = false,          % true for draft statement at cover, false for the final version
 ]{ntuthesis}
 
@@ -61,7 +61,7 @@
 % 附錄
 % Appendices
 \input{back/appendix01}
-% \input{back/appendix02}
-% \input{back/appendix03}
+\input{back/appendix02}
+\input{back/appendix03}
 
 \end{document}
